@@ -21,7 +21,10 @@ COPY src /code/src
 RUN ./mvnw package -Dnative -DskipTests -Dquarkus.native.additional-build-args="--static","--libc=musl"
 
 ## Stage 2 : create the final image
-FROM scratch
+FROM debian:12-slim
+RUN mkdir -p /opt/app/tmp && chmod -R 777 /opt/app/tmp
+ENV JAVA_OPTIONS="-Djava.io.tmpdir=/opt/app/tmp"
+ENV QUARKUS_VERTX_CACHE_DIR="/opt/app/tmp/vertx-cache"
 COPY --from=build /code/target/*-runner /application
 EXPOSE 8080
 ENTRYPOINT [ "/application" ]
