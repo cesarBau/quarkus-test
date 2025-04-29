@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @ApplicationScoped
 public class UserService {
 
-    private final String DB_NAME = "test";
+    private final String DB_NAME = "netcas";
     private final String COLLECTION_NAME = "users-quarkus";
 
     @Inject

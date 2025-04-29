@@ -1,6 +1,5 @@
 package com.example.service;
 
-import com.example.entity.InfoDocument;
 import com.mongodb.client.MongoClient;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -11,7 +10,7 @@ import java.time.Instant;
 @ApplicationScoped
 public class InfoService {
 
-    private final String DB_NAME = "test";
+    private final String DB_NAME = "netcas";
     private final String COLLECTION_NAME = "info-quarkus";
 
     @Inject

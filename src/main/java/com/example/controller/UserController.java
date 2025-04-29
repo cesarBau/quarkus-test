@@ -9,7 +9,7 @@ import jakarta.ws.rs.Path;
 
 import java.util.List;
 
-@Path("/user")
+@Path("/quarkus/user")
 public class UserController {
 
     @Inject
